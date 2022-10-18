@@ -67,13 +67,15 @@ public class CalculatorSample implements ActionListener{
         
     }
     public void actionPerformed(ActionEvent ev){
+        //check operator
         if((ev.getSource().equals(bnp)||ev.getSource().equals(bnm)||ev.getSource().equals(bnt)||ev.getSource().equals(bnd))&&check.equals("")){
             check = ev.getActionCommand();
             check2 = true;
-            temp = Integer.parseInt(txt.getText());
+            temp = Integer.parseInt(txt.getText()); //getnumber
         }else if((ev.getSource().equals(bnp)||ev.getSource().equals(bnm)||ev.getSource().equals(bnt)||ev.getSource().equals(bnd))&&!check.equals("")){
+            //have operator and press operator
             check = ev.getActionCommand();
-        }else if(ev.getSource().equals(bne)){
+        }else if(ev.getSource().equals(bne)){ //equal button
             if(check.equals("+")){
                 temp += Integer.parseInt(this.txt.getText());
             }else if(check.equals("-")){
@@ -83,7 +85,7 @@ public class CalculatorSample implements ActionListener{
             }else if(check.equals("/")){
                 temp /= Integer.parseInt(this.txt.getText());
             }
-            txt.setText(temp+"");
+            txt.setText(temp+""); 
             check = "";
         }else if(ev.getSource().equals(bnc)){
             txt.setText("");

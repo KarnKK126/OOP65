@@ -7,10 +7,11 @@
  *
  * @author User
  */
+/// containner 4 Jframe and Jpanel
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-public class TellerGUI implements ActionListener{
+public class TellerGUI implements ActionListener{ // use addActionlistener
     private JFrame f;
     private JPanel p1, p2, p3;
     private JLabel lbl1, lbl2;
@@ -55,7 +56,7 @@ public class TellerGUI implements ActionListener{
         bne.addActionListener(this);
     }
     public void actionPerformed(ActionEvent ev){
-            if(ev.getSource().equals(bnw)){
+            if(ev.getSource().equals(bnw)){ //
                 if(ac.getBalance() >= Integer.parseInt(txt2.getText()) && Integer.parseInt(txt2.getText()) >= 0){
                     ac.setBalance(ac.getBalance()-Integer.parseInt(txt2.getText()));
                     txt1.setText((int)ac.getBalance()+"");
