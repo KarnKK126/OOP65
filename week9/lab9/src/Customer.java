@@ -12,6 +12,7 @@ public class Customer {
     private String lastName;
     private Account acct[];
     private int numOfAccount;
+    private int []x[];
     public Customer(){
         firstName = "";
         lastName = "";

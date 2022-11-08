@@ -7,17 +7,22 @@
  *
  * @author User
  */
-import java.util.*;
 public class Customer {
     private String firstName;
     private String lastName;
-    ArrayList acct;
-    private int numOfAccount;
+    private CheckingAccount acct;
     public Customer(){
-        acct = new ArrayList();
+        firstName = "";
+        lastName = "";
+        acct = null;
     }
     public Customer(String firstName, String lastName){
-        acct = new ArrayList();
+        this("", "", null);
+    }
+    public Customer(String firstName, String lastName, CheckingAccount acct){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.acct = acct;
     }
     public void setFirstName(String firstName){
         this.firstName = firstName;
@@ -31,25 +36,20 @@ public class Customer {
     public String getLastName(){
         return lastName;
     }
-//    public Account[] getAcct(){
-//        return acct;
-//    }
+    public void setAcct(CheckingAccount acct){
+        this.acct = acct;
+    }
+    public CheckingAccount getAcct(){
+        return acct;
+    }
     public String toString(){
-        return "Customer's name "+firstName + " " + lastName + " " + numOfAccount;
+        if(acct == null){
+            return firstName+" "+lastName+" doesn't have account.";
+        }else{
+            return "The "+firstName+" account has "+acct.getBalance()+" baht and "+acct.getCredit()+" credits.";
+        }
     }
     public boolean equals(Customer c){
         return firstName.equals(c.firstName) && lastName.equals(c.lastName);
-    }
-    
-    public Account getAccount(int index) {
-        return (Account)acct.get(index);
-    }
-    
-    public void addAccount(Account acct) {
-        this.acct.add(acct);
-    }
-    
-    public int getNumOfAccount(){
-        return this.acct.size();
     }
 }
