@@ -82,7 +82,9 @@ public class StudentView implements ActionListener, WindowListener{
         frame.add(bottomPanel);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        
         int x = (int) ((dimension.getWidth() - frame.getWidth()) / 2);
         int y = (int) ((dimension.getHeight() - frame.getHeight()) / 2);
         frame.setLocation(x, y);
